@@ -10,8 +10,8 @@
 
 # Bastion ami installation
 -------------------------------------
-yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-yum install -y dnf-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm
+yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+yum install -y dnf-utils https://rpms.remirepo.net/enterprise/remi-release-9.rpm 
 yum install wget vim python3 telnet htop git mysql net-tools chrony -y
 systemctl start chronyd
 systemctl enable chronyd
@@ -19,9 +19,9 @@ systemctl enable chronyd
 # Nginx ami installation 
 -----------------------------------------
 ```
-yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
 
-yum install -y dnf-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm
+yum install -y dnf-utils http://rpms.remirepo.net/enterprise/remi-release-9.rpm
 
 yum install wget vim python3 telnet htop git mysql net-tools chrony -y
 
@@ -64,9 +64,9 @@ sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 
 # webserver ami installation 
 ```
-yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
 
-yum install -y dnf-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm
+yum install -y dnf-utils http://rpms.remirepo.net/enterprise/remi-release-9.rpm
 
 yum install wget vim python3 telnet htop git mysql net-tools chrony -y
 
@@ -96,7 +96,7 @@ make rpm
 yum install -y  ./build/amazon-efs-utils*rpm
 ```
 
-## seting up self-signed certificate for the apache  webserver instance
+## seting up self-signed certificate for the apache webserver instance
 ```
 yum install -y mod_ssl
 
