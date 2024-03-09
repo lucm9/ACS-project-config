@@ -1,10 +1,10 @@
 #!/bin/bash
-yum install -y nginx
-systemctl start nginx
-systemctl enable nginx
+sudo yum install -y nginx
+sudo systemctl start nginx
+sudo systemctl enable nginx
 git clone https://github.com/lucm9/ACS-project-config.git
-mv /ACS-project-config/reverse.conf /etc/nginx/
-mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf-distro
+sudo mv ACS-project-config/reverse.conf /etc/nginx/
+sudo mv etc/nginx/nginx.conf /etc/nginx/nginx.conf-distro
 cd /etc/nginx/
 touch nginx.conf
 sed -n 'w nginx.conf' reverse.conf
