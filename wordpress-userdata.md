@@ -17,12 +17,12 @@ mkdir /var/www/html/
 sudo cp -R wordpress/* /var/www/html/
 cd /var/www/html/
 touch healthstatus
-sed -i "s/localhost/cls-database.c1cei6qi8n1k.us-east-2.rds.amazonaws.com/g" wp-config.php 
-sed -i "s/username_here/CLSadmin/g" wp-config.php 
-sed -i "s/password_here/adminadmin/g" wp-config.php 
-sed -i "s/database_name_here/wordpressdb/g" wp-config.php 
-chcon -t httpd_sys_rw_content_t /var/www/html/ -R
-systemctl restart httpd
+sudo sed -i "s/localhost/cls-database.c1cei6qi8n1k.us-east-2.rds.amazonaws.com/g" wp-config.php 
+sudo sed -i "s/username_here/CLSadmin/g" wp-config.php 
+sudo sed -i "s/password_here/adminadmin/g" wp-config.php 
+sudo sed -i "s/database_name_here/wordpressdb/g" wp-config.php 
+sudo chcon -t httpd_sys_rw_content_t /var/www/html/ -R
+sudo systemctl restart httpd
 
 
 
