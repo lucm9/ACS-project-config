@@ -11,14 +11,14 @@ sudo systemctl start php-fpm
 sudo systemctl enable php-fpm
 git clone https://github.com/lucm9/tooling.git
 mkdir /var/www/html
-cp -R tooling/html/*  /var/www/html/
+sudo cp -R tooling/html/*  /var/www/html/
 cd /tooling
-mysql -h cls-database.c1cei6qi8n1k.us-east-2.rds.amazonaws.com -u CLSadmin -p toolingdb < tooling-db.sql
+sudo mysql -h cls-database.c1cei6qi8n1k.us-east-2.rds.amazonaws.com -u CLSadmin -p toolingdb < tooling-db.sql
 cd /var/www/html/
 touch healthstatus
-sed -i "s/$db = mysqli_connect('mysql.tooling.svc.cluster.local', 'admin', 'admin', 'tooling');/$db = mysqli_connect('cls-database.c1cei6qi8n1k.us-east-2.rds.amazonaws.com', 'CLSadmin', 'adminadmin', 'toolingdb');/g" functions.php
-chcon -t httpd_sys_rw_content_t /var/www/html/ -R
-systemctl restart httpd
+sudo sed -i "s/$db = mysqli_connect('mysql.tooling.svc.cluster.local', 'admin', 'admin', 'tooling');/$db = mysqli_connect('cls-database.c1cei6qi8n1k.us-east-2.rds.amazonaws.com', 'CLSadmin', 'adminadmin', 'toolingdb');/g" functions.php
+sudo chcon -t httpd_sys_rw_content_t /var/www/html/ -R
+sudo systemctl restart httpd
 
 
 
